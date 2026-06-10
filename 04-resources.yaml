@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: resources-demo
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    resources:
+      limit:
+        cpu: "100m"
+        memory: "200mb"
+      requests:
+        cpu: "50m"
+        memory: "70mb"     
+    env:
+    - name: course
+      value: kubernetes
+    - name: trainer
+      value: viv
